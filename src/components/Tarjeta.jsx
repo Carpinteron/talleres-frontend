@@ -1,0 +1,1 @@
+import './Tarjeta.css'
