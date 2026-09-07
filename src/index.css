@@ -1,6 +1,232 @@
+:root {
+    --bg: #f7f8fa;
+    --text: #171a2d;
+    --muted: #73778a;
+    --header-bg: #222c31;
+    --hero-start: #263238;
+    --hero-end: #607d8b;
+    --accent: #f14f6a;
+    --accent-hover: #df304f;
+    --card-border: #e8e9ee;
+    --shadow: 0 5px 16px rgba(24, 28, 48, 0.1);
+}
 
+* {
+    box-sizing: border-box;
+}
 
 body {
-  margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
 }
+
+a {
+    color: inherit;
+}
+
+.header {
+    background: var(--header-bg);
+    color: white;
+}
+
+.header__container,
+.footer__container {
+    width: min(100% - 44px, 1200px);
+    margin: 0 auto;
+    padding: 14px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.highlight {
+    color: var(--accent);
+    font-weight: 700;
+}
+.header__brand {
+    margin: 0;
+    color: var(--accent);
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.nav__link {
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 0.8rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.nav__link:hover {
+    color: var(--accent);
+}
+
+.hero {
+    min-height: 243px;
+    display: grid;
+    place-items: center;
+    padding: 42px 22px;
+    color: white;
+    text-align: center;
+    background: linear-gradient(110deg, var(--hero-start), var(--hero-end));
+}
+
+.hero-text {
+    max-width: 620px;
+}
+
+.hero h1 {
+    margin: 0 0 14px;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+}
+
+.hero p {
+    margin: 0 auto 22px;
+    max-width: 470px;
+    color: #b9bfce;
+    font-size: 0.95rem;
+    line-height: 1.55;
+}
+
+.btn {
+    display: inline-block;
+    border: 0;
+    border-radius: 999px;
+    padding: 9px 20px;
+    background: var(--accent);
+    color: white;
+    font: inherit;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background: var(--accent-hover);
+    transform: translateY(-1px);
+}
+
+main {
+    padding: 40px 30px;
+    text-align: center;
+}
+
+main > h2 {
+    margin: 0 0 20px;
+    font-size: 1.45rem;
+}
+
+main > p {
+    margin: 0 0 30px;
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-weight: 400;
+}
+
+main > p strong {
+    font-weight: 400;
+}
+
+main > .tarjeta {
+    text-align: left;
+    
+}
+
+.courses {
+    padding: 40px 22px 58px;
+    background: var(--header-bg);
+    color: white;
+    text-align: center;
+}
+
+.courses p {
+    margin: 0 0 12px;
+    color: #c4c7d2;
+    font-size: 0.78rem;
+}
+
+.courses p:first-child {
+    color: white;
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+.courses > div {
+    width: 162px;
+    margin: 22px auto 12px;
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    border-radius: 8px;
+    background: #263238;
+}
+
+.counter {
+    width: 26px;
+    height: 26px;
+    border: 0;
+    border-radius: 50%;
+    background: var(--accent);
+    color: white;
+    font-size: 1rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+#student-count {
+    color: var(--accent);
+    font-size: 1.9rem;
+    font-weight: 700;
+}
+
+.footer {
+    background: #101116;
+    color: #7d8190;
+    text-align: center;
+}
+
+.footer p {
+    margin: 0;
+    padding: 16px 22px;
+    font-size: 0.7rem;
+}
+
+@media (min-width: 760px) {
+    main {
+        padding-right: max(22px, calc((100% - 1080px) / 2));
+        padding-left: max(22px, calc((100% - 1080px) / 2));
+    }
+
+    main > .tarjeta {
+        display: inline-flex;
+        width: calc(25% - 16px);
+        margin: 0 6px;
+        vertical-align: top;
+    }
+}
+
+@media (max-width: 500px) {
+    .header__container {
+        width: min(100% - 28px, 1200px);
+    }
+
+    .header__container,
+    .nav {
+        gap: 12px;
+    }
+}
+
