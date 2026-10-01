@@ -10,7 +10,7 @@ function Tarjeta({ icon, title, description, level }) {
       <p>{description}</p>
 
       <div className="tarjeta__level">
-        <button className="btn">{level}</button>
+        <span className="btn">{level}</span>
       </div>
     </div>
   )
