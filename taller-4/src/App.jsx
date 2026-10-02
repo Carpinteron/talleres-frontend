@@ -5,7 +5,6 @@ import Home from './views/Home'
 import Login from './views/Login'
 import Nosotros from './views/Nosotros'
 import NotFound from './views/NotFound'
-import './index.css'
 
 function App() {
   return (

@@ -16,7 +16,7 @@ const cursos = [
   {
     icon: '📙',
     title: 'Estado Global',
-    description: 'Gestiona el estado con Context API y aprende cuando usarlo.',
+    description: 'Gestiona el estado con Context API y aprende cuándo usarlo.',
     level: 'Intermedio',
   },
   {

@@ -2,17 +2,17 @@ import './Tarjeta.css'
 
 function Tarjeta({ icon, title, description, level }) {
   return (
-    <div className="tarjeta">
+    <article className="tarjeta">
       <div className="tarjeta__icon">{icon}</div>
 
-      <h2>{title}</h2>
+      <h3>{title}</h3>
 
       <p>{description}</p>
 
       <div className="tarjeta__level">
-        <span className="btn">{level}</span>
+        <span className="tarjeta__badge">{level}</span>
       </div>
-    </div>
+    </article>
   )
 }
 
