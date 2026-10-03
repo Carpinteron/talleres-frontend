@@ -1,10 +1,10 @@
 :root {
-    --bg: #f7f8fa;
+    --bg: #f7f9fa;
     --text: #171a2d;
     --muted: #73778a;
-    --header-bg: #222c31;
-    --hero-start: #263238;
-    --hero-end: #607d8b;
+    --header-bg: #101116;
+    --hero-start: #35314b;
+    --hero-end: #1c4458;
     --accent: #f14f6a;
     --accent-hover: #df304f;
     --card-border: #e8e9ee;
@@ -152,14 +152,24 @@ a {
     text-decoration: none;
 }
 
+.ambient-surface {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background:
+        linear-gradient(135deg, #694f8b2e, transparent 62%),
+        linear-gradient(315deg, #3b778f33, transparent 68%),
+        linear-gradient(145deg, #f14f6a0f, transparent 48%),
+        #101827;
+}
+
 .hero {
     padding: 24px 22px;
     color: white;
     text-align: center;
-    background: linear-gradient(110deg, var(--hero-start), var(--hero-end));
 }
 
-.hero-text {
+.hero__content {
     width: min(100%, 760px);
     animation: hero-enter 0.7s 0.1s ease both;
 }
@@ -260,6 +270,55 @@ main > p {
     line-height: 1.6;
 }
 
+.login-page {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    justify-content: center;
+    min-height: 0;
+    padding: 20px 22px;
+    background:
+        linear-gradient(135deg, rgba(229, 237, 244, 0.95), rgba(250, 244, 246, 0.92) 52%, rgba(232, 239, 245, 0.95)),
+        var(--bg);
+}
+
+.login-card {
+    width: min(100%, 440px);
+    padding: clamp(24px, 4vw, 36px);
+    border: 1px solid rgba(255, 255, 255, 0.78);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.58);
+    box-shadow: 0 24px 60px rgba(47, 63, 82, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    animation: login-card-enter 0.6s 0.08s ease both;
+}
+
+.login-card__header {
+    margin-bottom: 22px;
+}
+
+.login-kicker {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.login-card h1 {
+    margin: 0 0 12px;
+    color: var(--text);
+    font-size: clamp(1.8rem, 5vw, 2.4rem);
+}
+
+.login-card .login-microcopy {
+    margin: 0;
+    font-size: 0.82rem;
+}
+
 .login-form {
     width: min(100%, 400px);
     margin: 0 auto;
@@ -268,12 +327,36 @@ main > p {
     text-align: left;
 }
 
+.login-field {
+    display: grid;
+    gap: 7px;
+}
+
+.login-field label {
+    color: var(--text);
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
 .login-form input {
     margin-bottom: 8px;
     padding: 10px 12px;
     border: 1px solid var(--card-border);
     border-radius: 6px;
+    background: rgba(255, 255, 255, 0.72);
     font: inherit;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.login-form input:hover {
+    border-color: #c8aeb5;
+}
+
+.login-form input:focus {
+    border-color: var(--accent);
+    background: white;
+    box-shadow: 0 0 0 4px rgba(241, 79, 106, 0.12);
+    outline: none;
 }
 
 .login-form input:disabled {
@@ -287,8 +370,31 @@ main > p {
 }
 
 .login-status {
+    min-height: 52px;
     margin: 8px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: var(--accent);
+    text-align: center;
+    line-height: 1.45;
+}
+
+.login-form .btn {
+    width: 100%;
+    margin-top: 6px;
+}
+
+.login-submit-button--submitted {
+    background: #5c9b83;
+    cursor: not-allowed;
+    opacity: 1;
+}
+
+.login-submit-button--submitted:hover {
+    background: #5c9b83;
+    box-shadow: none;
+    transform: none;
 }
 
 .courses {
@@ -299,7 +405,6 @@ main > p {
     align-items: center;
     justify-content: center;
     padding: 40px 22px;
-    background: var(--header-bg);
     color: white;
     text-align: center;
 }
@@ -317,6 +422,8 @@ main > p {
 }
 
 .courses > div {
+    position: relative;
+    z-index: 1;
     width: 200px;
     margin: 22px auto 12px;
     padding: 18px 20px;
@@ -325,7 +432,11 @@ main > p {
     justify-content: space-between;
     gap: 14px;
     border-radius: 8px;
-    background: #263238;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
 }
 
 .counter {
@@ -378,6 +489,14 @@ main > p {
     .nav {
         gap: 12px;
     }
+
+    .login-page {
+        padding: 16px;
+    }
+
+    .login-card {
+        padding: 24px 20px;
+    }
 }
 
 @keyframes view-enter {
@@ -413,6 +532,18 @@ main > p {
 
     100% {
         transform: scale(1);
+    }
+}
+
+@keyframes login-card-enter {
+    from {
+        opacity: 0;
+        transform: translateY(16px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
     }
 }
 

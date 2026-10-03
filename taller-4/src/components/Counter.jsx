@@ -3,7 +3,7 @@ function Counter({ value, onChange }) {
   const increase = () => onChange((currentValue) => currentValue + 1)
 
   return (
-    <main className="courses view" aria-labelledby="counter-title">
+    <main className="courses view ambient-surface" aria-labelledby="counter-title">
       <p id="counter-title">¿Cuántos estudiantes van a inscribirse?</p>
       <p>Usa los botones para ajustar el número</p>
       <div>
